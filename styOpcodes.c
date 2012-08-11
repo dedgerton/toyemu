@@ -19,11 +19,35 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include <stdint.h>
-#include <stdio.h>
-#include "stringRes.h"
-#include "auxiliary.h"
+#include "styOpcodes.h"
 
-void opcode0x86(uint8_t* data); // | Zero Page   | STX 15     | $86/134 | 2 |
-void opcode0x96(uint8_t* data); // | Zero Page,Y | STX 15,Y   | $96/150 | 2 |
-void opcode0x8E(uint8_t* data); // | Absolute    | STX 1500   | $8E/142	| 3 |
+void opcode0x84(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x84Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    writeMemory(data[1], yreg);
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x94(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x94Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    writeMemory(data[1] + xreg, yreg);
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x8C(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x8CEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+    writeMemory(memoryAddress, yreg);
+    pcnt += 3;
+
+    return;
+}

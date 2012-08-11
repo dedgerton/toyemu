@@ -24,6 +24,6 @@
 #include "stringRes.h"
 #include "auxiliary.h"
 
-void opcode0x86(uint8_t* data); // | Zero Page   | STX 15     | $86/134 | 2 |
-void opcode0x96(uint8_t* data); // | Zero Page,Y | STX 15,Y   | $96/150 | 2 |
-void opcode0x8E(uint8_t* data); // | Absolute    | STX 1500   | $8E/142	| 3 |
+void opcode0x84(uint8_t* data); // | Zero Page   | STY 15     | $84/132 | 2 |
+void opcode0x94(uint8_t* data); // | Zero Page,X | STY 15,X   | $94/148 | 2 |
+void opcode0x8C(uint8_t* data); // | Absolute    | STY 1500   | $8C/140 | 3 |

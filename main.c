@@ -28,6 +28,7 @@
 #include "andOpcodes.h"
 #include "staOpcodes.h"
 #include "stxOpcodes.h"
+#include "styOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -139,6 +140,11 @@ int main()
     funcArr[0x86] = &opcode0x86;
     funcArr[0x96] = &opcode0x96;
     funcArr[0x8E] = &opcode0x8E;
+
+    // STX opcodes
+    funcArr[0x84] = &opcode0x84;
+    funcArr[0x94] = &opcode0x94;
+    funcArr[0x8C] = &opcode0x8C;
 
     uint8_t myProgram[] = {0xA9, 0xFF, 0x29, 0xAA};
     uint16_t programLength = 4;

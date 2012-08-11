@@ -73,4 +73,9 @@ static const char opcode0x86Encountered[] = "STX zp (0x86)";
 static const char opcode0x96Encountered[] = "STX zp,y (0x96)";
 static const char opcode0x8EEncountered[] = "STX abs (0x8E)";
 
+// STY opcodes
+static const char opcode0x84Encountered[] = "STY zp (0x84)";
+static const char opcode0x94Encountered[] = "STY zp,x (0x94)";
+static const char opcode0x8CEncountered[] = "STY abs (0x8C)";
+
 #endif /* __STRINGRES_H__ */
