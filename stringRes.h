@@ -22,47 +22,55 @@
 #ifndef __STRINGRES_H__
 #define __STRINGRES_H__
 
+static const char opcodeEncStart[]        = "OP_PARSE: Opcode ";
+static const char opcodeEncEnd[]          = " encountered.\n";
+
 // LDA opcodes
-static const char opcode0xA9Encountered[] = "OP_PARSE: Opcode LDA imm (0xA9) encountered.\n";
-static const char opcode0xA5Encountered[] = "OP_PARSE: Opcode LDA zp (0xA5) encountered.\n";
-static const char opcode0xB5Encountered[] = "OP_PARSE: Opcode LDA zp,x (0xB5) encountered.\n";
-static const char opcode0xADEncountered[] = "OP_PARSE: Opcode LDA abs (0xAD) encountered.\n";
-static const char opcode0xBDEncountered[] = "OP_PARSE: Opcode LDA abs,x (0xBD) encountered.\n";
-static const char opcode0xB9Encountered[] = "OP_PARSE: Opcode LDA abs,y (0xB9) encountered.\n";
-static const char opcode0xA1Encountered[] = "OP_PARSE: Opcode LDA ind,x (0xA1) encountered.\n";
-static const char opcode0xB1Encountered[] = "OP_PARSE: Opcode LDA ind,y (0xB1) encountered.\n";
+static const char opcode0xA9Encountered[] = "LDA imm (0xA9)";
+static const char opcode0xA5Encountered[] = "LDA zp (0xA5)";
+static const char opcode0xB5Encountered[] = "LDA zp,x (0xB5)";
+static const char opcode0xADEncountered[] = "LDA abs (0xAD)";
+static const char opcode0xBDEncountered[] = "LDA abs,x (0xBD)";
+static const char opcode0xB9Encountered[] = "LDA abs,y (0xB9)";
+static const char opcode0xA1Encountered[] = "LDA ind,x (0xA1)";
+static const char opcode0xB1Encountered[] = "LDA ind,y (0xB1)";
 
 // LDX opcodes
-static const char opcode0xA2Encountered[] = "OP_PARSE: Opcode LDX imm (0xA2) encountered.\n";
-static const char opcode0xA6Encountered[] = "OP_PARSE: Opcode LDX zp (0xA6) encountered.\n";
-static const char opcode0xB6Encountered[] = "OP_PARSE: Opcode LDX zp,y (0xB6) encountered.\n";
-static const char opcode0xAEEncountered[] = "OP_PARSE: Opcode LDX abs (0xAE) encountered.\n";
-static const char opcode0xBEEncountered[] = "OP_PARSE: Opcode LDX abs,y (0xBE) encountered.\n";
+static const char opcode0xA2Encountered[] = "LDX imm (0xA2)";
+static const char opcode0xA6Encountered[] = "LDX zp (0xA6)";
+static const char opcode0xB6Encountered[] = "LDX zp,y (0xB6)";
+static const char opcode0xAEEncountered[] = "LDX abs (0xAE)";
+static const char opcode0xBEEncountered[] = "LDX abs,y (0xBE)";
 
 // LDY opcodes
-static const char opcode0xA0Encountered[] = "OP_PARSE: Opcode LDY imm (0xA0) encountered.\n";
-static const char opcode0xA4Encountered[] = "OP_PARSE: Opcode LDY zp (0xA4) encountered.\n";
-static const char opcode0xB4Encountered[] = "OP_PARSE: Opcode LDY zp,x (0xB4) encountered.\n";
-static const char opcode0xACEncountered[] = "OP_PARSE: Opcode LDY abs (0xAC) encountered.\n";
-static const char opcode0xBCEncountered[] = "OP_PARSE: Opcode LDY abs,x (0xBC) encountered.\n";
+static const char opcode0xA0Encountered[] = "LDY imm (0xA0)";
+static const char opcode0xA4Encountered[] = "LDY zp (0xA4)";
+static const char opcode0xB4Encountered[] = "LDY zp,x (0xB4)";
+static const char opcode0xACEncountered[] = "LDY abs (0xAC)";
+static const char opcode0xBCEncountered[] = "LDY abs,x (0xBC)";
 
 // AND opcodes
-static const char opcode0x29Encountered[] = "OP_PARSE: Opcode AND imm (0x29) encountered.\n";
-static const char opcode0x25Encountered[] = "OP_PARSE: Opcode AND zp (0x25) encountered.\n";
-static const char opcode0x35Encountered[] = "OP_PARSE: Opcode AND zp,x (0x35) encountered.\n";
-static const char opcode0x2DEncountered[] = "OP_PARSE: Opcode AND abs (0x2D) encountered.\n";
-static const char opcode0x3DEncountered[] = "OP_PARSE: Opcode AND abs,x (0x3D) encountered.\n";
-static const char opcode0x39Encountered[] = "OP_PARSE: Opcode AND abs,y (0x39) encountered.\n";
-static const char opcode0x21Encountered[] = "OP_PARSE: Opcode AND ind,x (0x21) encountered.\n";
-static const char opcode0x31Encountered[] = "OP_PARSE: Opcode AND ind,y (0x31) encountered.\n";
+static const char opcode0x29Encountered[] = "AND imm (0x29)";
+static const char opcode0x25Encountered[] = "AND zp (0x25)";
+static const char opcode0x35Encountered[] = "AND zp,x (0x35)";
+static const char opcode0x2DEncountered[] = "AND abs (0x2D)";
+static const char opcode0x3DEncountered[] = "AND abs,x (0x3D)";
+static const char opcode0x39Encountered[] = "AND abs,y (0x39)";
+static const char opcode0x21Encountered[] = "AND ind,x (0x21)";
+static const char opcode0x31Encountered[] = "AND ind,y (0x31)";
 
 // STA opcodes
-static const char opcode0x85Encountered[] = "OP_PARSE: Opcode STA zp (0x85) encountered.\n";
-static const char opcode0x95Encountered[] = "OP_PARSE: Opcode STA zp,x (0x95) encountered.\n";
-static const char opcode0x8DEncountered[] = "OP_PARSE: Opcode STA abs (0x8D) encountered.\n";
-static const char opcode0x9DEncountered[] = "OP_PARSE: Opcode STA abs,x (0x9D) encountered.\n";
-static const char opcode0x99Encountered[] = "OP_PARSE: Opcode STA abs,y (0x99) encountered.\n";
-static const char opcode0x81Encountered[] = "OP_PARSE: Opcode STA ind,x (0x81) encountered.\n";
-static const char opcode0x91Encountered[] = "OP_PARSE: Opcode STA ind,y (0x91) encountered.\n";
+static const char opcode0x85Encountered[] = "STA zp (0x85)";
+static const char opcode0x95Encountered[] = "STA zp,x (0x95)";
+static const char opcode0x8DEncountered[] = "STA abs (0x8D)";
+static const char opcode0x9DEncountered[] = "STA abs,x (0x9D)";
+static const char opcode0x99Encountered[] = "STA abs,y (0x99)";
+static const char opcode0x81Encountered[] = "STA ind,x (0x81)";
+static const char opcode0x91Encountered[] = "STA ind,y (0x91)";
+
+// STX opcodes
+static const char opcode0x86Encountered[] = "STX zp (0x86)";
+static const char opcode0x96Encountered[] = "STX zp,y (0x96)";
+static const char opcode0x8EEncountered[] = "STX abs (0x8E)";
 
 #endif /* __STRINGRES_H__ */

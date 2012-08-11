@@ -23,7 +23,7 @@
 
 void opcode0x29(uint8_t* data)
 {
-    printf(opcode0x29Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x29Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = accu & data[1];
     auxSetAccuFlags();
@@ -34,7 +34,7 @@ void opcode0x29(uint8_t* data)
 
 void opcode0x25(uint8_t* data)
 {
-    printf(opcode0x25Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x25Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = accu & readMemory(data[1]);
     auxSetAccuFlags();
@@ -45,7 +45,7 @@ void opcode0x25(uint8_t* data)
 
 void opcode0x35(uint8_t* data)
 {
-    printf(opcode0x35Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x35Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = accu & readMemory(data[1] + xreg);
     auxSetAccuFlags();
@@ -56,7 +56,7 @@ void opcode0x35(uint8_t* data)
 
 void opcode0x2D(uint8_t* data)
 {
-    printf(opcode0x2DEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x2DEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = accu & readMemory(memoryAddress);
@@ -68,7 +68,7 @@ void opcode0x2D(uint8_t* data)
 
 void opcode0x3D(uint8_t* data)
 {
-    printf(opcode0x3DEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x3DEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = accu & readMemory(memoryAddress + xreg);
@@ -80,7 +80,7 @@ void opcode0x3D(uint8_t* data)
 
 void opcode0x39(uint8_t* data)
 {
-    printf(opcode0x39Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x39Encountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = accu & readMemory(memoryAddress + yreg);
@@ -92,7 +92,7 @@ void opcode0x39(uint8_t* data)
 
 void opcode0x21(uint8_t* data)
 {
-    printf(opcode0x21Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x21Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = accu & readMemory(data[1] + xreg);
     auxSetAccuFlags();
@@ -103,7 +103,7 @@ void opcode0x21(uint8_t* data)
 
 void opcode0x31(uint8_t* data)
 {
-    printf(opcode0x31Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x31Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = accu & (readMemory(data[1]) + yreg);
     auxSetAccuFlags();

@@ -23,7 +23,7 @@
 
 void opcode0xA0(uint8_t* data)
 {
-    printf(opcode0xA0Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xA0Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     yreg = data[1];
     auxSetYregFlags();
@@ -32,7 +32,7 @@ void opcode0xA0(uint8_t* data)
 
 void opcode0xA4(uint8_t* data)
 {
-    printf("OP_PARSE: Opcode LDY zp (0xA4) encountered.\n");
+    printf("%s%s%s", opcodeEncStart, opcode0xA4Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     yreg = readMemory(data[1]); // Load the value at memory address [OPERAND] into accumulator
     auxSetYregFlags();
@@ -41,7 +41,7 @@ void opcode0xA4(uint8_t* data)
 
 void opcode0xB4(uint8_t* data)
 {
-    printf("OP_PARSE: Opcode LDY zp,x (0xB6) encountered.\n");
+    printf("%s%s%s", opcodeEncStart, opcode0xB4Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     yreg = readMemory(data[1] + xreg);
     auxSetYregFlags();
@@ -50,7 +50,7 @@ void opcode0xB4(uint8_t* data)
 
 void opcode0xAC(uint8_t* data)
 {
-    printf("OP_PARSE: Opcode LDY abs (0xAC) encountered.\n");
+    printf("%s%s%s", opcodeEncStart, opcode0xACEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     yreg = readMemory(memoryAddress);
@@ -60,7 +60,7 @@ void opcode0xAC(uint8_t* data)
 
 void opcode0xBC(uint8_t* data)
 {
-    printf("OP_PARSE: Opcode LDY abs,x (0xBC) encountered.\n");
+    printf("%s%s%s", opcodeEncStart, opcode0xBCEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     yreg = readMemory(memoryAddress + xreg);

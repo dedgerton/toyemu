@@ -23,7 +23,7 @@
 
 void opcode0x86(uint8_t* data)
 {
-    printf(opcode0x86Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x86Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory(data[1], xreg); // Load the value at memory address [OPERAND] into accumulator
     pcnt += 2;
@@ -33,7 +33,7 @@ void opcode0x86(uint8_t* data)
 
 void opcode0x96(uint8_t* data)
 {
-    printf(opcode0x96Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x96Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory(data[1] + yreg, xreg);
     pcnt += 2;
@@ -43,7 +43,7 @@ void opcode0x96(uint8_t* data)
 
 void opcode0x8E(uint8_t* data)
 {
-    printf(opcode0x8EEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x8EEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     writeMemory(memoryAddress, xreg);

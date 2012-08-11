@@ -23,7 +23,7 @@
 
 void opcode0x85(uint8_t* data)
 {
-    printf(opcode0x85Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x85Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory(data[1], accu); // Load the value at memory address [OPERAND] into accumulator
     pcnt += 2;
@@ -33,7 +33,7 @@ void opcode0x85(uint8_t* data)
 
 void opcode0x95(uint8_t* data)
 {
-    printf(opcode0x95Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x95Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory(data[1] + xreg, accu);
     pcnt += 2;
@@ -43,7 +43,7 @@ void opcode0x95(uint8_t* data)
 
 void opcode0x8D(uint8_t* data)
 {
-    printf(opcode0x8DEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x8DEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     writeMemory(memoryAddress, accu);
@@ -54,7 +54,7 @@ void opcode0x8D(uint8_t* data)
 
 void opcode0x9D(uint8_t* data)
 {
-    printf(opcode0x9DEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x9DEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     writeMemory(memoryAddress + xreg, accu);
@@ -65,7 +65,7 @@ void opcode0x9D(uint8_t* data)
 
 void opcode0x99(uint8_t* data)
 {
-    printf(opcode0x99Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x99Encountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     writeMemory(memoryAddress + yreg, accu);
@@ -76,7 +76,7 @@ void opcode0x99(uint8_t* data)
 
 void opcode0x81(uint8_t* data)
 {
-    printf(opcode0x81Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x81Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory(data[1] + xreg, accu);
     pcnt += 2;
@@ -86,7 +86,7 @@ void opcode0x81(uint8_t* data)
 
 void opcode0x91(uint8_t* data)
 {
-    printf(opcode0x91Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0x91Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     writeMemory((data[1]) + yreg, accu);
     pcnt += 2;

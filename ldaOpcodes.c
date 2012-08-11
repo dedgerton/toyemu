@@ -23,7 +23,7 @@
 
 void opcode0xA9(uint8_t* data)
 {
-    printf(opcode0xA9Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xA9Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = data[1];
     auxSetAccuFlags();
@@ -34,7 +34,7 @@ void opcode0xA9(uint8_t* data)
 
 void opcode0xA5(uint8_t* data)
 {
-    printf(opcode0xA5Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xA5Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = readMemory(data[1]); // Load the value at memory address [OPERAND] into accumulator
     auxSetAccuFlags();
@@ -45,7 +45,7 @@ void opcode0xA5(uint8_t* data)
 
 void opcode0xB5(uint8_t* data)
 {
-    printf(opcode0xB5Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xB5Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = readMemory(data[1] + xreg);
     auxSetAccuFlags();
@@ -56,7 +56,7 @@ void opcode0xB5(uint8_t* data)
 
 void opcode0xAD(uint8_t* data)
 {
-    printf(opcode0xADEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xADEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = readMemory(memoryAddress);
@@ -68,7 +68,7 @@ void opcode0xAD(uint8_t* data)
 
 void opcode0xBD(uint8_t* data)
 {
-    printf(opcode0xBDEncountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xBDEncountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = readMemory(memoryAddress + xreg);
@@ -80,7 +80,7 @@ void opcode0xBD(uint8_t* data)
 
 void opcode0xB9(uint8_t* data)
 {
-    printf(opcode0xB9Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xB9Encountered, opcodeEncEnd);
     uint16_t memoryAddress = (data[1] << 8) | data[2];
     printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
     accu = readMemory(memoryAddress + yreg);
@@ -92,7 +92,7 @@ void opcode0xB9(uint8_t* data)
 
 void opcode0xA1(uint8_t* data)
 {
-    printf(opcode0xA1Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xA1Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = readMemory(data[1] + xreg);
     auxSetAccuFlags();
@@ -103,7 +103,7 @@ void opcode0xA1(uint8_t* data)
 
 void opcode0xB1(uint8_t* data)
 {
-    printf(opcode0xB1Encountered);
+    printf("%s%s%s", opcodeEncStart, opcode0xB1Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
     accu = readMemory(data[1]) + yreg;
     auxSetAccuFlags();
