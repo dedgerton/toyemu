@@ -22,14 +22,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
-#include "ldaOpcodes.h"
-#include "ldxOpcodes.h"
-#include "ldyOpcodes.h"
+#include "loadOpcodes.h"
 #include "andOpcodes.h"
 #include "staOpcodes.h"
 #include "stxOpcodes.h"
 #include "styOpcodes.h"
-#include "taxOpcodes.h"
+#include "taxOpcode.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;

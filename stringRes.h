@@ -78,4 +78,7 @@ static const char opcode0x84Encountered[] = "STY zp (0x84)";
 static const char opcode0x94Encountered[] = "STY zp,x (0x94)";
 static const char opcode0x8CEncountered[] = "STY abs (0x8C)";
 
+// TAX opcode
+static const char opcode0xAAEncountered[] = "TAX imp (0xAA)";
+
 #endif /* __STRINGRES_H__ */
