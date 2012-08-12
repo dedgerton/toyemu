@@ -44,3 +44,13 @@ void opcode0x5D(uint8_t* data); // | Absolute,X  | EOR 1500,X | $5D/93  | 3 |
 void opcode0x59(uint8_t* data); // | Absolute,Y  | EOR 1500,Y | $59/89  | 3 |
 void opcode0x41(uint8_t* data); // | Indirect,X  | EOR (15,X) | $41/65  | 2 |
 void opcode0x51(uint8_t* data); // | Indirect,Y  | EOR (15),Y | $51/81  | 2 |
+
+// ORA opcodes
+void opcode0x09(uint8_t* data); // | Immediate   | ORA #15    | $09/9   | 2 |
+void opcode0x05(uint8_t* data); // | Zero Page   | ORA 15     | $05/5   | 2 |
+void opcode0x15(uint8_t* data); // | Zero Page,X | ORA 15,X   | $15/21  | 2 |
+void opcode0x0D(uint8_t* data); // | Absolute    | ORA 1500   | $0D/13  | 3 |
+void opcode0x1D(uint8_t* data); // | Absolute,X  | ORA 1500,X | $1D/29  | 3 |
+void opcode0x19(uint8_t* data); // | Absolute,Y  | ORA 1500,Y | $19/25  | 3 |
+void opcode0x01(uint8_t* data); // | Indirect,X  | ORA (15,X) | $01/1   | 2 |
+void opcode0x11(uint8_t* data); // | Indirect,Y  | ORA (15),Y | $11/17  | 2 |

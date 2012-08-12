@@ -216,3 +216,117 @@ void opcode0x51(uint8_t* data)
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////end EOR opcodes//////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////ORA opcodes//////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+void opcode0x09(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x09Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    accu = accu | data[1];
+    auxSetAccuFlags();
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x05(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x05Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    accu = accu | readMemory(data[1]);
+    auxSetAccuFlags();
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x15(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x15Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    accu = accu | readMemory(data[1] + xreg);
+    auxSetAccuFlags();
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x0D(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x0DEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+    accu = accu | readMemory(memoryAddress);
+    auxSetAccuFlags();
+    pcnt += 3;
+
+    return;
+}
+
+void opcode0x1D(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x1DEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+    accu = accu | readMemory(memoryAddress + xreg);
+    auxSetAccuFlags();
+    pcnt += 3;
+
+    return;
+}
+
+void opcode0x19(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x19Encountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+    accu = accu | readMemory(memoryAddress + yreg);
+    auxSetAccuFlags();
+    pcnt += 3;
+
+    return;
+}
+
+void opcode0x01(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x01Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    accu = accu | readMemory(data[1] + xreg);
+    auxSetAccuFlags();
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x11(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x11Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+    accu = accu | (readMemory(data[1]) + yreg);
+    auxSetAccuFlags();
+    pcnt += 2;
+
+    return;
+}
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////end ORA opcodes//////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////

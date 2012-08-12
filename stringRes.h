@@ -25,6 +25,11 @@
 static const char opcodeEncStart[]        = "OP_PARSE: Opcode ";
 static const char opcodeEncEnd[]          = " encountered.\n";
 
+
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////////load opcodes///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
 // LDA opcodes
 static const char opcode0xA9Encountered[] = "LDA imm (0xA9)";
 static const char opcode0xA5Encountered[] = "LDA zp (0xA5)";
@@ -49,6 +54,15 @@ static const char opcode0xB4Encountered[] = "LDY zp,x (0xB4)";
 static const char opcode0xACEncountered[] = "LDY abs (0xAC)";
 static const char opcode0xBCEncountered[] = "LDY abs,x (0xBC)";
 
+///////////////////////////////////////////////////////////////////////////////
+////////////////////////////end load opcodes///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////////////logical opcodes///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
 // AND opcodes
 static const char opcode0x29Encountered[] = "AND imm (0x29)";
 static const char opcode0x25Encountered[] = "AND zp (0x25)";
@@ -68,6 +82,23 @@ static const char opcode0x5DEncountered[] = "EOR abs,x (0x5D)";
 static const char opcode0x59Encountered[] = "EOR abs,y (0x59)";
 static const char opcode0x41Encountered[] = "EOR ind,x (0x41)";
 static const char opcode0x51Encountered[] = "EOR ind,y (0x51)";
+
+// ORA opcodes
+static const char opcode0x09Encountered[] = "ORA imm (0x09)";
+static const char opcode0x05Encountered[] = "ORA zp (0x05)";
+static const char opcode0x15Encountered[] = "ORA zp,x (0x15)";
+static const char opcode0x0DEncountered[] = "ORA abs (0x0D)";
+static const char opcode0x1DEncountered[] = "ORA abs,x (0x1D)";
+static const char opcode0x19Encountered[] = "ORA abs,y (0x19)";
+static const char opcode0x01Encountered[] = "ORA ind,x (0x01)";
+static const char opcode0x11Encountered[] = "ORA ind,y (0x11)";
+
+///////////////////////////////////////////////////////////////////////////////
+/////////////////////////end logical opcodes///////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+
+
+
 
 // STA opcodes
 static const char opcode0x85Encountered[] = "STA zp (0x85)";

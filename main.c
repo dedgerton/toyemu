@@ -135,6 +135,17 @@ int main()
     funcArr[0x41] = &opcode0x41;
     funcArr[0x51] = &opcode0x51;
 
+    // ORA opcodes
+    funcArr[0x09] = &opcode0x09;
+    funcArr[0x05] = &opcode0x05;
+    funcArr[0x15] = &opcode0x15;
+    funcArr[0x0D] = &opcode0x0D;
+    funcArr[0x1D] = &opcode0x1D;
+    funcArr[0x19] = &opcode0x19;
+    funcArr[0x01] = &opcode0x01;
+    funcArr[0x11] = &opcode0x11;
+
+
     // STA opcodes
     funcArr[0x85] = &opcode0x85;
     funcArr[0x95] = &opcode0x95;
