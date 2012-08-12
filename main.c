@@ -23,10 +23,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 #include "loadOpcodes.h"
+#include "storeOpcodes.h"
 #include "andOpcodes.h"
-#include "staOpcodes.h"
-#include "stxOpcodes.h"
-#include "styOpcodes.h"
 #include "taxOpcode.h"
 
 uint16_t pcnt = 0x0000;
