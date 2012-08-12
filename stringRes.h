@@ -59,6 +59,16 @@ static const char opcode0x39Encountered[] = "AND abs,y (0x39)";
 static const char opcode0x21Encountered[] = "AND ind,x (0x21)";
 static const char opcode0x31Encountered[] = "AND ind,y (0x31)";
 
+// EOR opcodes
+static const char opcode0x49Encountered[] = "EOR imm (0x49)";
+static const char opcode0x45Encountered[] = "EOR zp (0x45)";
+static const char opcode0x55Encountered[] = "EOR zp,x (0x55)";
+static const char opcode0x4DEncountered[] = "EOR abs (0x4D)";
+static const char opcode0x5DEncountered[] = "EOR abs,x (0x5D)";
+static const char opcode0x59Encountered[] = "EOR abs,y (0x59)";
+static const char opcode0x41Encountered[] = "EOR ind,x (0x41)";
+static const char opcode0x51Encountered[] = "EOR ind,y (0x51)";
+
 // STA opcodes
 static const char opcode0x85Encountered[] = "STA zp (0x85)";
 static const char opcode0x95Encountered[] = "STA zp,x (0x95)";

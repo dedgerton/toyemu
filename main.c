@@ -22,9 +22,10 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
+
 #include "loadOpcodes.h"
 #include "storeOpcodes.h"
-#include "andOpcodes.h"
+#include "logicalOpcodes.h"
 #include "taxOpcode.h"
 
 uint16_t pcnt = 0x0000;
@@ -123,6 +124,16 @@ int main()
     funcArr[0x39] = &opcode0x39;
     funcArr[0x21] = &opcode0x21;
     funcArr[0x31] = &opcode0x31;
+
+    // EOR opcodes
+    funcArr[0x49] = &opcode0x49;
+    funcArr[0x45] = &opcode0x45;
+    funcArr[0x55] = &opcode0x55;
+    funcArr[0x4D] = &opcode0x4D;
+    funcArr[0x5D] = &opcode0x5D;
+    funcArr[0x59] = &opcode0x59;
+    funcArr[0x41] = &opcode0x41;
+    funcArr[0x51] = &opcode0x51;
 
     // STA opcodes
     funcArr[0x85] = &opcode0x85;

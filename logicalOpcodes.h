@@ -24,16 +24,8 @@
 #include "stringRes.h"
 #include "auxiliary.h"
 
-extern uint16_t pcnt;
-extern uint8_t  accu;
-extern uint8_t  xreg;
-extern uint8_t  yreg;
-extern uint8_t  spnt;
-extern uint8_t  carryFlag, zeroFlag, interruptFlag, decimalFlag, breakFlag, overflowFlag, negativeFlag;
 
-extern uint8_t readMemory(uint16_t address);
-extern void writeMemory(uint16_t address, uint8_t value);
-
+// AND opcodes
 void opcode0x29(uint8_t* data); // | Immediate   | AND #15    | $29/41  | 2 |
 void opcode0x25(uint8_t* data); // | Zero Page   | AND 15     | $25/37  | 2 |
 void opcode0x35(uint8_t* data); // | Zero Page,X | AND 15,X   | $35/53  | 2 |
@@ -42,3 +34,13 @@ void opcode0x3D(uint8_t* data); // | Absolute,X  | AND 1500,X | $3D/61  | 3 |
 void opcode0x39(uint8_t* data); // | Absolute,Y  | AND 1500,Y | $39/57  | 3 |
 void opcode0x21(uint8_t* data); // | Indirect,X  | AND (15,X) | $21/33  | 2 |
 void opcode0x31(uint8_t* data); // | Indirect,Y  | AND (15),Y | $31/49  | 2 |
+
+// EOR opcodes
+void opcode0x49(uint8_t* data); // | Immediate   | EOR #15    | $49/73  | 2 |
+void opcode0x45(uint8_t* data); // | Zero Page   | EOR 15     | $45/68  | 2 |
+void opcode0x55(uint8_t* data); // | Zero Page,X | EOR 15,X   | $55/85  | 2 |
+void opcode0x4D(uint8_t* data); // | Absolute    | EOR 1500   | $4D/77  | 3 |
+void opcode0x5D(uint8_t* data); // | Absolute,X  | EOR 1500,X | $5D/93  | 3 |
+void opcode0x59(uint8_t* data); // | Absolute,Y  | EOR 1500,Y | $59/89  | 3 |
+void opcode0x41(uint8_t* data); // | Indirect,X  | EOR (15,X) | $41/65  | 2 |
+void opcode0x51(uint8_t* data); // | Indirect,Y  | EOR (15),Y | $51/81  | 2 |
