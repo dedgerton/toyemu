@@ -54,3 +54,7 @@ void opcode0x1D(uint8_t* data); // | Absolute,X  | ORA 1500,X | $1D/29  | 3 |
 void opcode0x19(uint8_t* data); // | Absolute,Y  | ORA 1500,Y | $19/25  | 3 |
 void opcode0x01(uint8_t* data); // | Indirect,X  | ORA (15,X) | $01/1   | 2 |
 void opcode0x11(uint8_t* data); // | Indirect,Y  | ORA (15),Y | $11/17  | 2 |
+
+// BIT opcodes
+void opcode0x24(uint8_t* data); // | Zero Page   | BIT 15     | $24/36  | 2 |
+void opcode0x2C(uint8_t* data); // | Absolute    | BIT 1500   | $2C/44  | 3 |

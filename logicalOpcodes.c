@@ -330,3 +330,59 @@ void opcode0x11(uint8_t* data)
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////end ORA opcodes//////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////////BIT opcodes//////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+void opcode0x24(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x24Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+
+    uint8_t memoryValue = readMemory(data[1]);
+    uint8_t result = accu & memoryValue;
+
+    // Set the zero flag accordingly
+    if (result == 0)
+        zeroFlag = 1;
+    else zeroFlag = 0;
+
+    // Set the overflow flag accordingly
+    overflowFlag = (memoryValue & 0x20) >>  6;
+
+    // Set the overflow flag accordingly
+    negativeFlag = (memoryValue & 0x40) >>  7;
+
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0x2C(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0x2CEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+
+    uint8_t memoryValue = readMemory(memoryAddress);
+    uint8_t result = accu & memoryValue;
+
+    // Set the zero flag accordingly
+    if (result == 0)
+        zeroFlag = 1;
+    else zeroFlag = 0;
+
+    // Set the overflow flag accordingly
+    overflowFlag = (memoryValue & 0x20) >>  6;
+
+    // Set the overflow flag accordingly
+    negativeFlag = (memoryValue & 0x40) >>  7;
+
+    pcnt += 3;
+
+    return;
+}
+///////////////////////////////////////////////////////////////////////////////
+//////////////////////////////end BIT opcodes//////////////////////////////////
+///////////////////////////////////////////////////////////////////////////////
+

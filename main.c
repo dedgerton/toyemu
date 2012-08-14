@@ -145,6 +145,10 @@ void initializeFunctionTable()
     funcArr[0x01] = &opcode0x01;
     funcArr[0x11] = &opcode0x11;
 
+    // BIT opcodes
+    funcArr[0x24] = &opcode0x24;
+    funcArr[0x2C] = &opcode0x2C;
+
     // STA opcodes
     funcArr[0x85] = &opcode0x85;
     funcArr[0x95] = &opcode0x95;

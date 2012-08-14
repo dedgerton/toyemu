@@ -89,6 +89,11 @@ static const char opcode0x1DEncountered[] = "ORA abs,x (0x1D)";
 static const char opcode0x19Encountered[] = "ORA abs,y (0x19)";
 static const char opcode0x01Encountered[] = "ORA ind,x (0x01)";
 static const char opcode0x11Encountered[] = "ORA ind,y (0x11)";
+
+// BIT opcodes
+static const char opcode0x24Encountered[] = "BIT zp (0x24)";
+static const char opcode0x2CEncountered[] = "BIT abs (0x2C)";
+
 ///////////////////////////////////////////////////////////////////////////////
 /////////////////////////end logical opcodes///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////

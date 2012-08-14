@@ -47,19 +47,19 @@ Store Operations								Y
 		Zero Page,Y	STX 15,Y	$96/150			Y
 		Absolute	STX 1500	$8E/142			Y
 
-Register Transfers								P
+Register Transfers								Y
 
 	TAX		Transfer accumulator to X			Y
 		Implied		TAX			$AA/170			Y
 
-	TAY		Transfer accumulator to Y			N
-		Implied		TAY			$A8/168			N
+	TAY		Transfer accumulator to Y			Y
+		Implied		TAY			$A8/168			Y
 
-	TXA		Transfer X to accumulator			N
-		Implied		TXA			$8A/138			N
+	TXA		Transfer X to accumulator			Y
+		Implied		TXA			$8A/138			Y
 
-	TYA		Transfer Y to accumulator			N
-		Implied		TYA			$98/152			N
+	TYA		Transfer Y to accumulator			Y
+		Implied		TYA			$98/152			Y
 
 Stack Operations								N
 
@@ -81,7 +81,7 @@ Stack Operations								N
 	PLP		Pull processor status from stack	N
 		Implied		PLP			$28/40			N
 
-Logical Operations								P
+Logical Operations								Y
 
 	AND		Logical AND							Y
 		Immediate	AND #15		$29/41			Y
@@ -113,9 +113,9 @@ Logical Operations								P
 		Indirect,X	ORA (15,X)	$01/1			Y
 		Indirect,Y	ORA (15),Y	$11/17			Y
 
-	BIT		Bit Test							N
-		Zero Page	BIT 15		$24/36			N
-		Absolute	BIT 1500	$2C/44			N
+	BIT		Bit Test							Y
+		Zero Page	BIT 15		$24/36			Y
+		Absolute	BIT 1500	$2C/44			Y
 
 Arithmetic Operations							N
 
