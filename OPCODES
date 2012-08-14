@@ -1,0 +1,106 @@
+											Implemented?
+
+Load Operations
+	LDA		Load Accumulator
+		Immediate	LDA #15		$A9/169		Y
+		Zero Page	LDA 15		$A5/165		Y
+		Zero Page,X	LDA 15,X	$B5/181		Y
+		Absolute	LDA 1500	$AD/173		Y
+		Absolute,X	LDA 1500,X	$BD/189		Y
+		Absolute,Y	LDA 1500,Y	$B9/185		Y
+		Indirect,X	LDA (15,X)	$A1/161		Y
+		Indirect,Y	LDA (15),Y	$B1/177		Y
+
+	LDX		Load X Register
+		Immediate	LDX #15		$A2/162		Y
+		Zero Page	LDX 15		$A6/166		Y
+		Zero Page,Y	LDX 15,Y	$B6/182		Y
+		Absolute	LDX 1500	$AE/174		Y
+		Absolute,Y	LDX 1500,Y	$BE/190		Y
+
+	LDY		Load Y Register
+		Immediate	LDY #15		$A0/160		Y		
+		Zero Page	LDY 15		$A4/164		Y
+		Zero Page,X	LDY 15,X	$B4/180		Y
+		Absolute	LDY 1500	$AC/172		Y
+		Absolute,X	LDY 1500,X	$BC/188		Y
+
+Store Operations
+	STA 	Store Accumulator
+	STX 	Store X Register
+	STY 	Store Y Register
+
+Register Transfers
+	TAX		Transfer accumulator to X 
+	TAY		Transfer accumulator to Y 
+	TXA		Transfer X to accumulator 
+	TYA		Transfer Y to accumulator 
+
+Stack Operations
+	TSX		Transfer stack pointer to X
+	TXS		Transfer X to stack pointer
+	PHA		Push accumulator on stack
+	PHP		Push processor status on stack
+	PLA		Pull accumulator from stack
+	PLP		Pull processor status from stack
+
+Logical Operations
+	AND		Logical AND
+	EOR	 	Exclusive OR
+	ORA		Logical Inclusive OR
+	BIT		Bit Test
+
+
+Arithmetic Operations
+	ADC		Add with Carry
+	SBC		Subtract with Carry
+	CMP		Compare accumulator
+	CPX		Compare X register
+	CPY		Compare Y register
+
+
+Increments
+	INC		Increment a memory location
+	INX		Increment the X register
+	INY		Increment the Y register
+
+Decrements
+	DEC		Decrement a memory location
+	DEX		Decrement the X register
+	DEY		Decrement the Y register
+
+Shifts
+	ASL		Arithmetic Shift Left
+	LSR		Logical Shift Right
+	ROL		Rotate Left
+	ROR		Rotate Right
+
+Jumps
+	JMP		Jump to another location
+	JSR		Jump to a subroutine
+	RTS		Return from subroutine
+
+Branches
+	BCC		Branch if carry flag clear
+	BCS		Branch if carry flag set
+	BEQ		Branch if zero flag set
+	BMI		Branch if negative flag set
+	BNE		Branch if zero flag clear
+	BPL		Branch if negative flag clear
+	BVC		Branch if overflow flag clear
+	BVS		Branch if overflow flag set
+
+Status Flag Changes
+	CLC		Clear carry flag
+	CLD		Clear decimal mode flag
+	CLI		Clear interrupt disable flag
+	CLV		Clear overflow flag
+	SEC		Set carry flag
+	SED		Set decimal mode flag
+	SEI		Set interrupt disable flag
+
+
+System Functions
+	BRK		Force an interrupt
+	NOP		No Operation
+	RTI		Return from Interrupt
