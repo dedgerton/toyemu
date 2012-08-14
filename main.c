@@ -26,7 +26,7 @@
 #include "loadOpcodes.h"
 #include "storeOpcodes.h"
 #include "logicalOpcodes.h"
-#include "taxOpcode.h"
+#include "transferOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -164,8 +164,11 @@ void initializeFunctionTable()
     funcArr[0x94] = &opcode0x94;
     funcArr[0x8C] = &opcode0x8C;
 
-    // TAX opcode
+    // Register transfer opcodes
     funcArr[0xAA] = &opcode0xAA;
+    funcArr[0xA8] = &opcode0xA8;
+    funcArr[0x8A] = &opcode0x8A;
+    funcArr[0x98] = &opcode0x98;
 
     return;
 }
