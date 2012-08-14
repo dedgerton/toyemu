@@ -1,7 +1,7 @@
 											Implemented?
 
-Load Operations
-	LDA		Load Accumulator
+Load Operations								Y
+	LDA		Load Accumulator				Y
 		Immediate	LDA #15		$A9/169		Y
 		Zero Page	LDA 15		$A5/165		Y
 		Zero Page,X	LDA 15,X	$B5/181		Y
@@ -11,15 +11,15 @@ Load Operations
 		Indirect,X	LDA (15,X)	$A1/161		Y
 		Indirect,Y	LDA (15),Y	$B1/177		Y
 
-	LDX		Load X Register
+	LDX		Load X Register					Y
 		Immediate	LDX #15		$A2/162		Y
 		Zero Page	LDX 15		$A6/166		Y
 		Zero Page,Y	LDX 15,Y	$B6/182		Y
 		Absolute	LDX 1500	$AE/174		Y
 		Absolute,Y	LDX 1500,Y	$BE/190		Y
 
-	LDY		Load Y Register
-		Immediate	LDY #15		$A0/160		Y		
+	LDY		Load Y Register					Y
+		Immediate	LDY #15		$A0/160		Y
 		Zero Page	LDY 15		$A4/164		Y
 		Zero Page,X	LDY 15,X	$B4/180		Y
 		Absolute	LDY 1500	$AC/172		Y

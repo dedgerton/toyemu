@@ -84,7 +84,7 @@ void parseProgram(uint8_t* program)
     return;
 }
 
-void initializeFunctionTable()
+void initalizeFunctionTable()
 {
     int i = 0;
 
@@ -175,7 +175,7 @@ int main()
     uint8_t myProgram[] = {0xA9, 0xFF, 0x29, 0xAA};
     uint16_t programLength = 4;
 
-    initializeFunctionTable();
+    initalizeFunctionTable();
 
     while (pcnt < programLength)
     {
