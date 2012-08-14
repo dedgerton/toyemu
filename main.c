@@ -175,6 +175,8 @@ int main()
     uint8_t myProgram[] = {0xA9, 0xFF, 0x29, 0xAA};
     uint16_t programLength = 4;
 
+    initalizeFunctionTable();
+
     while (pcnt < programLength)
     {
         printf("\n");
