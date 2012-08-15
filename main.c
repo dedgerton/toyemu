@@ -27,6 +27,7 @@
 #include "storeOpcodes.h"
 #include "logicalOpcodes.h"
 #include "transferOpcodes.h"
+#include "arithmeticOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -173,6 +174,16 @@ void initializeFunctionTable()
     funcArr[0xA8] = &opcode0xA8;
     funcArr[0x8A] = &opcode0x8A;
     funcArr[0x98] = &opcode0x98;
+
+    // ADC opcodes
+    funcArr[0x69] = &opcode0x69;
+    funcArr[0x65] = &opcode0x65;
+    funcArr[0x75] = &opcode0x75;
+    funcArr[0x6D] = &opcode0x6D;
+    funcArr[0x7D] = &opcode0x7D;
+    funcArr[0x79] = &opcode0x79;
+    funcArr[0x61] = &opcode0x61;
+    funcArr[0x71] = &opcode0x71;
 
     return;
 }
