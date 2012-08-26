@@ -26,29 +26,77 @@
 ///////////////////////////////////////////////////////////////////////////////
 void opcode0xE6(uint8_t* data)
 {
-    uint8_t original, result;
+    uint8_t value;
     printf("%s%s%s", opcodeEncStart, opcode0xE6Encountered, opcodeEncEnd);
     printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
 
-    original = readMemory(data[1]);
-    result = original + 1;
-    writeMemory(data[1], result);
+    value = readMemory(data[1]);
+    value ++;
+    writeMemory(data[1], value);
 
-    // Set the zero flag accordingly
-    if (result == 0)
-        zeroFlag = 1;
-    else zeroFlag = 0;
-
-    // Set the negative flag accordingly
-    if ((result >> 7) == 1)
-        negativeFlag = 1;
-    else negativeFlag = 0;
+    auxSetZeroFlag(value); // Set the zero flag accordingly
+    auxSetNegativeFlag(value); // Set the negative flag accordingly
 
     pcnt += 2;
 
     return;
 }
 
+void opcode0xF6(uint8_t* data)
+{
+    uint8_t value;
+    printf("%s%s%s", opcodeEncStart, opcode0xF6Encountered, opcodeEncEnd);
+    printf("OP_PARSE: Operand is 0x%02X\n", data[1]);
+
+    value = readMemory(data[1] + xreg);
+    value ++;
+    writeMemory(data[1] + xreg, value);
+
+    auxSetZeroFlag(value); // Set the zero flag accordingly
+    auxSetNegativeFlag(value); // Set the negative flag accordingly
+
+    pcnt += 2;
+
+    return;
+}
+
+void opcode0xEE(uint8_t* data)
+{
+    uint8_t value;
+    printf("%s%s%s", opcodeEncStart, opcode0xEEEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+
+    value = readMemory(memoryAddress);
+    value ++;
+    writeMemory(memoryAddress, value);
+
+    auxSetZeroFlag(value); // Set the zero flag accordingly
+    auxSetNegativeFlag(value); // Set the negative flag accordingly
+
+    pcnt += 3;
+
+    return;
+}
+
+void opcode0xFE(uint8_t* data)
+{
+    uint8_t value;
+    printf("%s%s%s", opcodeEncStart, opcode0xFEEncountered, opcodeEncEnd);
+    uint16_t memoryAddress = (data[1] << 8) | data[2];
+    printf("OP_PARSE: Operand is 0x%04X\n", memoryAddress);
+
+    value = readMemory(memoryAddress + xreg);
+    value ++;
+    writeMemory(memoryAddress + xreg, value);
+
+    auxSetZeroFlag(value); // Set the zero flag accordingly
+    auxSetNegativeFlag(value); // Set the negative flag accordingly
+
+    pcnt += 3;
+
+    return;
+}
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////end INC opcodes//////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
