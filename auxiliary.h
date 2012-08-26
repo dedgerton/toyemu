@@ -34,3 +34,6 @@ extern void writeMemory(uint16_t address, uint8_t value);
 void auxSetAccuFlags(); // Auxiliary to set the negative and zero flag after LD'ing the accumulator
 void auxSetXregFlags(); // Auxiliary to set the negative and zero flag after LD'ing the X register
 void auxSetYregFlags(); // Auxiliary to set the negative and zero flag after LD'ing the Y register
+
+inline void auxSetNegativeFlag(uint8_t argument); // Auxiliary to set the negative flag if bit 7 (8, really) is set in the argument passed
+inline void auxSetZeroFlag(uint8_t argument); // Auxiliary to set the zero flag if the argument passed is zero

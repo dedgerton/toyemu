@@ -28,4 +28,3 @@ void opcode0xAA(uint8_t* data); // | Implied     | TAX        | $AA/170 | 1 |
 void opcode0xA8(uint8_t* data); // | Implied     | TAY        | $A8/168 | 1 |
 void opcode0x8A(uint8_t* data); // | Implied     | TXA        | $8A/138 | 1 |
 void opcode0x98(uint8_t* data); // | Implied     | TYA        | $98/152 | 1 |
-

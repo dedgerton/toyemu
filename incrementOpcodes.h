@@ -24,13 +24,9 @@
 #include "stringRes.h"
 #include "auxiliary.h"
 
-// ADC opcodes
-void adcBackbone(uint8_t value); // Backbone of the ADC opcodes, to reduce redundancy
-void opcode0x69(uint8_t* data); // | Immediate   | ADC #15    | $69/105 | 2 |
-void opcode0x65(uint8_t* data); // | Zero Page	 | ADC 15     | $65/101 | 2 |
-void opcode0x75(uint8_t* data); // | Zero Page,X | ADC 15,X   | $75/117 | 2 |
-void opcode0x6D(uint8_t* data); // | Absolute    | ADC 1500   | $6D/109 | 3 |
-void opcode0x7D(uint8_t* data); // | Absolute,X  | ADC 1500,X | $7D/125 | 3 |
-void opcode0x79(uint8_t* data); // | Absolute,Y  | ADC 1500,Y | $79/121 | 3 |
-void opcode0x61(uint8_t* data); // | Indirect,X  | ADC (15,X) | $61/97  | 2 |
-void opcode0x71(uint8_t* data); // | Indirect,Y  | ADC (15),Y | $71/113 | 2 |
+// INC opcodes
+void opcode0xE6(uint8_t* data); // | Zero Page   | INC 15     | $E6/230 | 2 |
+void opcode0xF6(uint8_t* data); // | Zero Page,X | INC 15,X   | $F6/246 | 2 |
+void opcode0xEE(uint8_t* data); // | Absolute    | INC 1500   | $EE/238 | 3 |
+void opcode0xFE(uint8_t* data); // | Absolute,X  | INC 1500,X | $FE/254 | 3 |
+

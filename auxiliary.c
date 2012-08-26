@@ -65,3 +65,21 @@ void auxSetYregFlags()
 
     return;
 }
+
+inline void auxSetNegativeFlag(uint8_t argument)
+{
+    // Set the negative flag if bit 7 (8) is set, clear it otherwise
+    if ((argument >> 7) == 1)
+        negativeFlag = 1;
+    else negativeFlag = 0;
+    return;
+}
+
+inline void auxSetZeroFlag(uint8_t argument)
+{
+    // Set the zero flag if zero, clear it otherwise
+    if (argument == 0)
+        negativeFlag = 1;
+    else negativeFlag = 0;
+    return;
+}

@@ -19,7 +19,7 @@
  * Boston, MA 02111-1307, USA.
  */
 
- #include "arithmeticOpcodes.h"
+#include "arithmeticOpcodes.h"
 
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////////ADC opcodes//////////////////////////////////
@@ -39,16 +39,13 @@ void adcBackbone(uint8_t value)
     else overflowFlag = 0;
 
     // Set the zero flag accordingly
-    if (tempResult == 0)
-        zeroFlag = 0;
-    else zeroFlag = 1;
+    auxSetZeroFlag(tempResult);
 
     accu = tempResult & 0x00FF;
 
     // Set the negative flag accordingly
-    if ((accu >> 7) == 1)
-        negativeFlag = 1;
-    else negativeFlag = 0;
+    auxSetNegativeFlag(accu);
+
 
     return;
 }
