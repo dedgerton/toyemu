@@ -19,13 +19,16 @@
  * Boston, MA 02111-1307, USA.
  */
 
-#include "taxOpcode.h"
+#include <stdint.h>
+#include <stdio.h>
+#include "stringRes.h"
+#include "auxiliary.h"
 
-void opcode0xAA(uint8_t* data)
-{
-    printf("%s%s%s", opcodeEncStart, opcode0xAAEncountered, opcodeEncEnd);
-    xreg = accu;
-    pcnt += 1;
+// DEC opcodes
+void opcode0xC6(uint8_t* data); // | Zero Page   | DEC 15     | $C6/198 | 2 |
+void opcode0xD6(uint8_t* data); // | Zero Page,X | DEC 15,X   | $D6/214 | 2 |
+void opcode0xCE(uint8_t* data); // | Absolute    | DEC 1500   | $CE/206 | 3 |
+void opcode0xDE(uint8_t* data); // | Absolute,X  | DEC 1500,X | $DE/222 | 3 |
 
-    return;
-}
+void opcode0xCA(uint8_t* data); // | Implied     | DEX        | $CA/202 | 1 |
+void opcode0x88(uint8_t* data); // | Implied     | DEY        | $88/136 | 1 |
