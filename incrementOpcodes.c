@@ -100,3 +100,32 @@ void opcode0xFE(uint8_t* data)
 ///////////////////////////////////////////////////////////////////////////////
 //////////////////////////////end INC opcodes//////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
+
+void opcode0xE8(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0xE8Encountered, opcodeEncEnd);
+
+    xreg ++;
+
+    auxSetZeroFlag(xreg); // Set the zero flag accordingly
+    auxSetNegativeFlag(xreg); // Set the negative flag accordingly
+
+    pcnt += 1;
+
+    return;
+}
+
+void opcode0xC8(uint8_t* data)
+{
+    printf("%s%s%s", opcodeEncStart, opcode0xC8Encountered, opcodeEncEnd);
+
+    yreg ++;
+
+    auxSetZeroFlag(yreg); // Set the zero flag accordingly
+    auxSetNegativeFlag(yreg); // Set the negative flag accordingly
+
+    pcnt += 1;
+
+    return;
+}
+

@@ -30,3 +30,5 @@ void opcode0xF6(uint8_t* data); // | Zero Page,X | INC 15,X   | $F6/246 | 2 |
 void opcode0xEE(uint8_t* data); // | Absolute    | INC 1500   | $EE/238 | 3 |
 void opcode0xFE(uint8_t* data); // | Absolute,X  | INC 1500,X | $FE/254 | 3 |
 
+void opcode0xE8(uint8_t* data); // | Implied     | INX        | $E8/232 | 1 |
+void opcode0xC8(uint8_t* data); // | Implied     | INY        | $C8/200 | 1 |

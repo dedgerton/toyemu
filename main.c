@@ -28,6 +28,7 @@
 #include "logicalOpcodes.h"
 #include "transferOpcodes.h"
 #include "arithmeticOpcodes.h"
+#include "incrementOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -164,7 +165,7 @@ void initializeFunctionTable()
     funcArr[0x96] = &opcode0x96;
     funcArr[0x8E] = &opcode0x8E;
 
-    // STX opcodes
+    // STY opcodes
     funcArr[0x84] = &opcode0x84;
     funcArr[0x94] = &opcode0x94;
     funcArr[0x8C] = &opcode0x8C;
@@ -184,6 +185,14 @@ void initializeFunctionTable()
     funcArr[0x79] = &opcode0x79;
     funcArr[0x61] = &opcode0x61;
     funcArr[0x71] = &opcode0x71;
+
+    // Increment opcodes
+    funcArr[0xE6] = &opcode0xE6;
+    funcArr[0xF6] = &opcode0xF6;
+    funcArr[0xEE] = &opcode0xEE;
+    funcArr[0xFE] = &opcode0xFE;
+    funcArr[0xE8] = &opcode0xE8;
+    funcArr[0xC8] = &opcode0xC8;
 
     return;
 }

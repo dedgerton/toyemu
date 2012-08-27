@@ -152,7 +152,10 @@ static const char opcode0x71Encountered[] = "ADC ind,y (0x71)";
 static const char opcode0xE6Encountered[] = "INC zp (0xE6)";
 static const char opcode0xF6Encountered[] = "INC zp,x (0xF6)";
 static const char opcode0xEEEncountered[] = "INC abs (0xEE)";
-static const char opcode0xEFEncountered[] = "INC abs,x (0xEF)";
+static const char opcode0xFEEncountered[] = "INC abs,x (0xFE)";
+
+static const char opcode0xE8Encountered[] = "INX (0xE8)";
+static const char opcode0xC8Encountered[] = "INY (0xC8)";
 ///////////////////////////////////////////////////////////////////////////////
 ///////////////////////end increment opcodes///////////////////////////////////
 ///////////////////////////////////////////////////////////////////////////////
