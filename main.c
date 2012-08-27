@@ -30,6 +30,7 @@
 #include "arithmeticOpcodes.h"
 #include "incrementOpcodes.h"
 #include "decrementOpcodes.h"
+#include "flagOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -202,6 +203,15 @@ void initializeFunctionTable()
     funcArr[0xDE] = &opcode0xDE;
     funcArr[0xCA] = &opcode0xCA;
     funcArr[0x88] = &opcode0x88;
+
+    // Flag opcodes
+    funcArr[0x18] = &opcode0x18;
+    funcArr[0xD8] = &opcode0xD8;
+    funcArr[0x58] = &opcode0x58;
+    funcArr[0xB8] = &opcode0xB8;
+    funcArr[0x38] = &opcode0x38;
+    funcArr[0xF8] = &opcode0xF8;
+    funcArr[0x78] = &opcode0x78;
 
     return;
 }
