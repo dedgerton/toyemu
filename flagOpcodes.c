@@ -24,42 +24,56 @@
 
 void opcode0x18(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0x18Encountered, opcodeEncEnd);
     carryFlag = 0;
+    pcnt += 1;
     return;
 }
 
 void opcode0xD8(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0xD8Encountered, opcodeEncEnd);
     decimalFlag = 0;
+    pcnt += 1;
     return;
 }
 
 void opcode0x58(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0x58Encountered, opcodeEncEnd);
     interruptFlag = 0;
+    pcnt += 1;
     return;
 }
 
 void opcode0xB8(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0xB8Encountered, opcodeEncEnd);
     overflowFlag = 0;
+    pcnt += 1;
     return;
 }
 
 void opcode0x38(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0x38Encountered, opcodeEncEnd);
     carryFlag = 1;
+    pcnt += 1;
     return;
 }
 
 void opcode0xF8(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0xF8Encountered, opcodeEncEnd);
     decimalFlag = 1;
+    pcnt += 1;
     return;
 }
 
 void opcode0x78(uint8_t* data)
 {
+    printf("%s%s%s", opcodeEncStart, opcode0x78Encountered, opcodeEncEnd);
     interruptFlag = 1;
+    pcnt += 1;
     return;
 }
