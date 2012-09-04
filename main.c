@@ -31,12 +31,13 @@
 #include "incrementOpcodes.h"
 #include "decrementOpcodes.h"
 #include "flagOpcodes.h"
+#include "stackOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
 uint8_t  xreg = 0x00;
 uint8_t  yreg = 0x00;
-uint8_t  spnt = 0x00;
+uint8_t  spnt = 0xFF;
 uint8_t  carryFlag=0, zeroFlag=0, interruptFlag=0, decimalFlag=0, breakFlag=0, overflowFlag=0, negativeFlag=0;
 uint8_t  memory[0xFFFF];
 
@@ -61,11 +62,6 @@ void writeMemory(uint16_t address, uint8_t value)
 {
     memory[address] = value;
     return;
-}
-
-uint8_t getSreg()
-{
-    return (carryFlag | (zeroFlag << 1) | (interruptFlag << 2) | (decimalFlag << 3) | (breakFlag << 4) | 0x20 | (overflowFlag << 6) |   (negativeFlag << 7));
 }
 
 void printCpuState()
@@ -212,6 +208,14 @@ void initializeFunctionTable()
     funcArr[0x38] = &opcode0x38;
     funcArr[0xF8] = &opcode0xF8;
     funcArr[0x78] = &opcode0x78;
+
+    // Stack opcodes
+    funcArr[0xBA] = &opcode0xBA;
+    funcArr[0x9A] = &opcode0x9A;
+    funcArr[0x48] = &opcode0x48;
+    funcArr[0x08] = &opcode0x08;
+    funcArr[0x68] = &opcode0x68;
+    funcArr[0x28] = &opcode0x28;
 
     return;
 }

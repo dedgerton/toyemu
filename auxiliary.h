@@ -31,6 +31,9 @@ extern uint8_t  carryFlag, zeroFlag, interruptFlag, decimalFlag, breakFlag, over
 extern uint8_t readMemory(uint16_t address);
 extern void writeMemory(uint16_t address, uint8_t value);
 
+uint8_t getSreg(); // Auxiliary to access the status flags as a register
+void setSreg(uint8_t value); // Auxiliary to access the status flags as a register
+
 void auxSetAccuFlags(); // Auxiliary to set the negative and zero flag after LD'ing the accumulator
 void auxSetXregFlags(); // Auxiliary to set the negative and zero flag after LD'ing the X register
 void auxSetYregFlags(); // Auxiliary to set the negative and zero flag after LD'ing the Y register
