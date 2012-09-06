@@ -32,7 +32,6 @@
 #include "decrementOpcodes.h"
 #include "flagOpcodes.h"
 #include "stackOpcodes.h"
-#include "shiftOpcodes.h"
 
 uint16_t pcnt = 0x0000;
 uint8_t  accu = 0x00;
@@ -217,13 +216,6 @@ void initializeFunctionTable()
     funcArr[0x08] = &opcode0x08;
     funcArr[0x68] = &opcode0x68;
     funcArr[0x28] = &opcode0x28;
-
-    // ASL opcodes
-    funcArr[0x0A] = &opcode0x0A;
-    funcArr[0x06] = &opcode0x06;
-    funcArr[0x16] = &opcode0x16;
-    funcArr[0x0E] = &opcode0x0E;
-    funcArr[0x1E] = &opcode0x1E;
 
     return;
 }
