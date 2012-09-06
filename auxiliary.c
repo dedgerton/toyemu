@@ -21,6 +21,23 @@
 
 #include "auxiliary.h"
 
+uint8_t getSreg()
+{
+    return (carryFlag | (zeroFlag << 1) | (interruptFlag << 2) | (decimalFlag << 3) | (breakFlag << 4) | 0x20 | (overflowFlag << 6) |   (negativeFlag << 7));
+}
+
+void setSreg(uint8_t value)
+{
+    carryFlag     = (value & 0x01);
+    zeroFlag      = (value & 0x02) >> 1;
+    interruptFlag = (value & 0x04) >> 2;
+    decimalFlag   = (value & 0x08) >> 3;
+    breakFlag     = (value & 0x10) >> 4;
+    overflowFlag  = (value & 0x40) >> 6;
+    negativeFlag  = (value & 0x80) >> 7;
+    return;
+}
+
 void auxSetAccuFlags()
 {
     // Set the zero flag accordingly
@@ -72,6 +89,15 @@ inline void auxSetNegativeFlag(uint8_t argument)
     if ((argument >> 7) == 1)
         negativeFlag = 1;
     else negativeFlag = 0;
+    return;
+}
+
+inline void auxSetCarryFlag(uint8_t argument)
+{
+    // Set the negative flag if bit 7 (8) is set, clear it otherwise
+    if ((argument >> 7) == 1)
+        carryFlag = 1;
+    else carryFlag = 0;
     return;
 }
 
