@@ -1,8 +1,8 @@
-											Implemented?
+									Implemented?
 
-Load Operations									Y
+Load Operations								Y
 
-	LDA		Load Accumulator					Y
+	LDA	Load Accumulator					Y
 		Immediate	LDA #15		$A9/169			Y
 		Zero Page	LDA 15		$A5/165			Y
 		Zero Page,X	LDA 15,X	$B5/181			Y
@@ -12,21 +12,21 @@ Load Operations									Y
 		Indirect,X	LDA (15,X)	$A1/161			Y
 		Indirect,Y	LDA (15),Y	$B1/177			Y
 
-	LDX		Load X Register						Y
+	LDX	Load X Register						Y
 		Immediate	LDX #15		$A2/162			Y
 		Zero Page	LDX 15		$A6/166			Y
 		Zero Page,Y	LDX 15,Y	$B6/182			Y
 		Absolute	LDX 1500	$AE/174			Y
 		Absolute,Y	LDX 1500,Y	$BE/190			Y
 
-	LDY		Load Y Register						Y
+	LDY		Load Y Register					Y
 		Immediate	LDY #15		$A0/160			Y
 		Zero Page	LDY 15		$A4/164			Y
 		Zero Page,X	LDY 15,X	$B4/180			Y
 		Absolute	LDY 1500	$AC/172			Y
 		Absolute,X	LDY 1500,X	$BC/188			Y
 
-Store Operations								Y
+Store Operations							Y
 
 	STA 	Store Accumulator					Y
 		Zero Page	STA 15		$85/133			Y
@@ -47,43 +47,43 @@ Store Operations								Y
 		Zero Page,Y	STX 15,Y	$96/150			Y
 		Absolute	STX 1500	$8E/142			Y
 
-Register Transfers								Y
+Register Transfers							Y
 
 	TAX		Transfer accumulator to X			Y
-		Implied		TAX			$AA/170			Y
+		Implied		TAX			$AA/170		Y
 
 	TAY		Transfer accumulator to Y			Y
-		Implied		TAY			$A8/168			Y
+		Implied		TAY			$A8/168		Y
 
 	TXA		Transfer X to accumulator			Y
-		Implied		TXA			$8A/138			Y
+		Implied		TXA			$8A/138		Y
 
 	TYA		Transfer Y to accumulator			Y
-		Implied		TYA			$98/152			Y
+		Implied		TYA			$98/152		Y
 
-Stack Operations								N
+Stack Operations							N
 
 	TSX		Transfer stack pointer to X			N
-		Implied		TSX			$BA/186			N
+		Implied		TSX			$BA/186		N
 
 	TXS		Transfer X to stack pointer			N
-		Implied		TXS			$9A/154			N
+		Implied		TXS			$9A/154		N
 
 	PHA		Push accumulator on stack			N
-		Implied		PHA			$48/72			N
+		Implied		PHA			$48/72		N
 
-	PHP		Push processor status on stack		N
-		Implied		PHP			$08/8			N
+	PHP		Push processor status on stack			N
+		Implied		PHP			$08/8		N
 
 	PLA		Pull accumulator from stack			N
-		Implied		PLA			$68/104			N
+		Implied		PLA			$68/104		N
 
-	PLP		Pull processor status from stack	N
-		Implied		PLP			$28/40			N
+	PLP		Pull processor status from stack		N
+		Implied		PLP			$28/40		N
 
-Logical Operations								Y
+Logical Operations							Y
 
-	AND		Logical AND							Y
+	AND		Logical AND					Y
 		Immediate	AND #15		$29/41			Y
 		Zero Page	AND 15		$25/37			Y
 		Zero Page,X	AND 15,X	$35/53			Y
@@ -93,7 +93,7 @@ Logical Operations								Y
 		Indirect,X	AND (15,X)	$21/33			Y
 		Indirect,Y	AND (15),Y	$31/49			Y
 
-	EOR	 	Exclusive OR						Y
+	EOR	 	Exclusive OR					Y
 		Immediate	EOR #15		$49/73			Y
 		Zero Page	EOR 15		$45/68			Y
 		Zero Page,X	EOR 15,X	$55/85			Y
@@ -113,13 +113,13 @@ Logical Operations								Y
 		Indirect,X	ORA (15,X)	$01/1			Y
 		Indirect,Y	ORA (15),Y	$11/17			Y
 
-	BIT		Bit Test							Y
+	BIT		Bit Test					Y
 		Zero Page	BIT 15		$24/36			Y
 		Absolute	BIT 1500	$2C/44			Y
 
 Arithmetic Operations							N
 
-	ADC		Add with Carry						N
+	ADC		Add with Carry					N
 		Immediate	ADC #15		$69/105			N
 		Zero Page	ADC 15		$65/101			N
 		Zero Page,X	ADC 15,X	$75/117			N
@@ -129,7 +129,7 @@ Arithmetic Operations							N
 		Indirect,X	ADC (15,X)	$61/97			N
 		Indirect,Y	ADC (15),Y	$71/113			N
 
-	SBC		Subtract with Carry					N
+	SBC		Subtract with Carry				N
 		Immediate	SBC #15		$E9/233			N
 		Zero Page	SBC 15		$E5/229			N
 		Zero Page,X	SBC 15,X	$175/245		N
@@ -149,19 +149,19 @@ Arithmetic Operations							N
 		Indirect,X	CMP (15,X)	$C1/193			N
 		Indirect,Y	CMP (15),Y	$D1/209			N
 
-	CPX		Compare X register					N
+	CPX		Compare X register				N
 		Immediate	CPX #15		$E0/224			N
 		Zero Page	CPX 15		$E4/228			N
 		Absolute	CPX 1500	$EC/236			N
 
 
-	CPY		Compare Y register					N
+	CPY		Compare Y register				N
 		Immediate	CPY #15		$C0/192			N
 		Zero Page	CPY 15		$C4/196			N
 		Absolute	CPY 1500	$CC/204			N
 
 
-Increments										N
+Increments								N
 
 	INC		Increment a memory location			N
 		Zero Page	INC 15		$E6/230			N
@@ -170,12 +170,12 @@ Increments										N
 		Absolute, X	INC 1500,X	$FE/254			N
 
 	INX		Increment the X register			N
-		Implied		INX			$E8/232			N
+		Implied		INX			$E8/232		N
 
 	INY		Increment the Y register			N
-		Implied		INY			$C8/200			N
+		Implied		INY			$C8/200		N
 
-Decrements										N
+Decrements								N
 
 	DEC		Decrement a memory location			N
 		Zero Page	DEC 15		$C6/198			N
@@ -184,42 +184,42 @@ Decrements										N
 		Absolute,X	DEC 1500,X	$DE/222			N
 
 	DEX		Decrement the X register			N
-		Implied		DEX			$CA/202			N
+		Implied		DEX			$CA/202		N
 
 	DEY		Decrement the Y register			N
-		Implied		DEY			$88/136			N
+		Implied		DEY			$88/136		N
 
-Shifts											N
+Shifts									N
 
 	ASL		Arithmetic Shift Left				N
-		Accumulator	ASL			$0A/10			N
+		Accumulator	ASL			$0A/10		N
 		Zero Page	ASL 15		$06/6			N
 		Zero Page,X	ASL 15,X	$16/22			N
 		Absolute	ASL 1500	$0E/14			N
 		Absolute,X	ASL 1500,X	$1E/30			N
 
-	LSR		Logical Shift Right					N
-		Accumulator	LSR			$4A/74			N
+	LSR		Logical Shift Right				N
+		Accumulator	LSR			$4A/74		N
 		Zero Page	LSR 15		$46/70			N
 		Zero Page,X	LSR 15,X	$56/86			N
 		Absolute	LSR 1500	$4E/78			N
 		Absolute,X	LSR 1500A	$5E/94			N
 
-	ROL		Rotate Left							N
-		Accumulator	ROL			$2A/42			N
+	ROL		Rotate Left					N
+		Accumulator	ROL			$2A/42		N
 		Zero Page	ROL 15		$26/38			N
 		Zero Page,X	ROL 15,X	$36/54			N
 		Absolute	ROL 1500	$2E/46			N
 		Absolute,X	ROL 1500,X	$3E/62			N
 
-	ROR		Rotate Right						N
-		Accumulator	ROR			$6A/106			N
+	ROR		Rotate Right					N
+		Accumulator	ROR			$6A/106		N
 		Zero Page	ROR 15		$66/102			N
 		Zero Page,X	ROR 15,X	$76/118			N
 		Absolute	ROR 1500	$6E/110			N
 		Absolute,X	ROR 1500.X	$7E/126			N
 
-Jumps											N
+Jumps									N
 
 	JMP		Jump to another location			N
 		Absolute	JMP 1500	$4C/76			N
@@ -229,9 +229,9 @@ Jumps											N
 		Absolute	JSR 1500	$20/32			N
 
 	RTS		Return from subroutine				N
-		Implied		RTS			$60/96			N
+		Implied		RTS			$60/96		N
 
-Branches										N
+Branches								N
 
 	BCC		Branch if carry flag clear			N
 		Relative	BCC addr.	$90/144			N
@@ -249,49 +249,49 @@ Branches										N
 	BNE		Branch if zero flag clear			N
 		Relative	BNE addr.	$D0/208			N
 
-	BPL		Branch if negative flag clear		N
+	BPL		Branch if negative flag clear			N
 		Relative	BPL addr.	$10/16			N
 
-	BVC		Branch if overflow flag clear		N
+	BVC		Branch if overflow flag clear			N
 		Relative	BVC addr.	$50/80			N
 
 	BVS		Branch if overflow flag set			N
 		Relative	BVS addr.	$70/112			N
 
-Status Flag Changes								N
+Status Flag Changes							N
 
-	CLC		Clear carry flag					N
-		Implied		CLC			$18/24			N
+	CLC		Clear carry flag				N
+		Implied		CLC			$18/24		N
 
 	CLD		Clear decimal mode flag				N
-		Implied		CLD			$D8/216			N
+		Implied		CLD			$D8/216		N
 
-	CLI		Clear interrupt disable flag		N
-		Implied		CLI			$58/88			N
+	CLI		Clear interrupt disable flag			N
+		Implied		CLI			$58/88		N
 
-	CLV		Clear overflow flag					N
-		Implied		CLV			$B8/184			N
+	CLV		Clear overflow flag				N
+		Implied		CLV			$B8/184		N
 
-	SEC		Set carry flag						N
-		Implied		SEC			$38/56			N
+	SEC		Set carry flag					N
+		Implied		SEC			$38/56		N
 
 	SED		Set decimal mode flag				N
-		Implied		SED			$F8/248			N
+		Implied		SED			$F8/248		N
 
 	SEI		Set interrupt disable flag			N
-		Implied		SEI			$78/120			N
+		Implied		SEI			$78/120		N
 
 
-System Functions								N
+System Functions							N
 
-	BRK		Force an interrupt					N
-		Implied		BRK			$00/0			N
+	BRK		Force an interrupt				N
+		Implied		BRK			$00/0		N
 
-	NOP		No Operation						N
-		Implied		NOP			$EA/234			N
+	NOP		No Operation					N
+		Implied		NOP			$EA/234		N
 
 	RTI		Return from Interrupt				N
-		Implied		RTI			$40/64			N
+		Implied		RTI			$40/64		N
 
 
 

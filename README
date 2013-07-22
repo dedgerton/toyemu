@@ -6,6 +6,8 @@ emulator possible. This is because this is my first such attempt at an
 emulator. Incidentally, however, this may be useful to other devs looking for
 examples of emulator source code.
 
-This software is in the extremely early stages of development. It probably
-won't be even semi-usable until September 2012. No, seriously, come back
-later, okay?
+This software is in the extremely early stages of development.
+
+UPDATE: After an extended hiatus, toyemu is now back under development and may
+be vaugely 'usable' by late August 2013; but, again, this is simply a toy
+emulator, anyway.
